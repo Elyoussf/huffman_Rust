@@ -1,4 +1,5 @@
 use std::collections::BinaryHeap;
+use colored::*;
 use std::collections::HashMap;
 
 struct Tree{
@@ -35,7 +36,9 @@ for chara in payload.chars(){
 return memo ;
 }
 fn main(){
-let text = "Huffman coding is a lossless data compression algorithm. It is used to compress data in a way that reduces the overall size of the data without losing any information.";
+let text = "Huffman coding is a lossless data compression algorithm. It is used to compress data in a way that reduces the overall size of the data without losing any information.
+Huffman coding is a lossless data compression algorithm. It is used to compress data in a way that reduces the overall size of the data without losing any information.
+vjhfdjhvjfhjhjxn,nbxjcjxhcjhxjcdhcjkkmldszaudehf x,dxdbd  dbcjhdbhddncjbd cnb dbjhfindcn nd nbjhrhfj nc  vkjbejvbrekenkrejbvkj vn rjvjrhfoijzsnxsqnxlkjsqlkdjzeoifpofibejbvkndclkdnk Huffman coding is a lossless data compression algorithm. It is used to compress data in a way that reduces the overall size of the data without losing any information.";
 let payload  = String::from(text);
 let memo :HashMap<char, u64> = HashMap::new();    
 let freq = frequencies(payload, memo);
@@ -88,7 +91,9 @@ size_original+=freq[&u.chars().next().unwrap()]*8;
 
 }
 
-println!("The size of the original is : {} the size_compressed one {}",size_original,size_compressed);
+println!("the original size is {} bits",size_original.to_string().red());
+println!("The size of The compressed One {} Bits ",size_compressed.to_string().green());
+
 
 }
 fn findCharacter(head : Tree ,codes :  &mut HashMap<String,String>,mut current_code :  String){
